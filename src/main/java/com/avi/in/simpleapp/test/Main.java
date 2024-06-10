@@ -31,7 +31,7 @@ import java.io.IOException;
 //
 //        SendEmailRequest sendEmailRequest = SendEmailRequest.builder()
 //                .from("Acme <onboarding@resend.dev>")
-//                .to("avinash.dew9@gmail.com")
+//                .to("demo@gmail.com")
 //                //.attachments(att)
 //                .html("<strong>It works!</strong")
 //                .subject("Hello from Java!")
