@@ -23,6 +23,16 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private UserInfo userInfo;
 
+    public User(String username, String email, String password, UserInfo userInfo) {
+
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.userInfo = userInfo;
+    }
+
+   
+
     // Getters and Setters
     public Long getId() {
         return id;

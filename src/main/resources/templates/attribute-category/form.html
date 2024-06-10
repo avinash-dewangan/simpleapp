@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create/Edit Location Type</title>
+</head>
+<body>
+<h1>Create/Edit Attribute Category</h1>
+<form th:action="@{/attribute-category}" th:object="${attributeCategoryMaster}" method="post">
+    <input type="hidden" th:if="${attributeCategoryMaster.attributeCategoryMasterId}" th:field="*{attributeCategoryMasterId}"/>
+    <div>
+        <label>Name:</label>
+        <input type="text" th:field="*{attributeCategoryMasterName}" placeholder="Enter Attribute Category name"/>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a th:href="@{/attribute-category}">Back to List</a>
+</body>
+</html>

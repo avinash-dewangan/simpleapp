@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Location Types</title>
+</head>
+<body>
+<h1>Location Types</h1>
+<a th:href="@{/location-types/new}">Create New Location Type</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="locationType : ${locationTypes}">
+        <td th:text="${locationType.locationTypeMasterId}">ID</td>
+        <td th:text="${locationType.locationTypeMasterName}">Name</td>
+        <td>
+            <a th:href="@{/location-types/edit/{id}(id=${locationType.locationTypeMasterId})}">Edit</a>
+            <a th:href="@{/location-types/delete/{id}(id=${locationType.locationTypeMasterId})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

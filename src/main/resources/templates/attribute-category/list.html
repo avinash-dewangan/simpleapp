@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Location Types</title>
+</head>
+<body>
+<h1>Attribute Category</h1>
+<a th:href="@{/attribute-category/new}">Create New Location Type</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="attributeCategoryMaster : ${attributeCategoryMaster}">
+        <td th:text="${attributeCategoryMaster.attributeCategoryMasterId}">ID</td>
+        <td th:text="${attributeCategoryMaster.attributeCategoryMasterName}">Name</td>
+        <td>
+            <a th:href="@{/attribute-category/edit/{id}(id=${attributeCategoryMaster.attributeCategoryMasterId})}">Edit</a>
+            <a th:href="@{/attribute-category/delete/{id}(id=${attributeCategoryMaster.attributeCategoryMasterId})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
