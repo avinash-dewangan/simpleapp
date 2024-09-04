@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create/Edit Attribute</title>
+</head>
+<body>
+<h1>Create/Edit Attribute</h1>
+<form th:action="@{/attribute}" th:object="${attributeDTO}"  method="post">
+    <input type="hidden" th:if="${attribute.attributeId}" th:field="*{attributeId}"/>
+    <div>
+        <label>Name:</label>
+        <input type="text" th:field="*{attribute.attributeName}" placeholder="Enter Attribute Category name"/>
+    </div>
+
+    <div>
+        <label for="attributeCategoryMasters">Choose an option:</label>
+        <select id="attributeCategoryMasters" name="attributeCategoryMasters">
+            <option value="" disabled selected>Select an option</option>
+            <option th:each="attributeCategoryMaster : ${attributeCategoryMasters}" th:value="${attributeCategoryMaster.attributeCategoryMasterId}" th:text="${attributeCategoryMaster.attributeCategoryMasterName}" th:selected="${attributeCategoryMaster.attributeCategoryMasterId} == ${selectedOption.selectedOptionId}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="inputDataTypeMasters">Choose an option:</label>
+        <select id="inputDataTypeMasters" name="inputDataTypeMastersSelectedOption" >
+            <option value="" disabled selected>Select an option</option>
+            <option th:each="inputDataTypeMaster : ${inputDataTypeMasters}" th:value="${inputDataTypeMaster.inputDataTypeMasterId}" th:text="${inputDataTypeMaster.inputDataTypeMasterName}"></option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a th:href="@{/attribute}">Back to List</a>
+</body>
+</html>

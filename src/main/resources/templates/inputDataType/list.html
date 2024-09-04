@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Input Data Type Master</title>
+</head>
+<body>
+<h1>Input Data Type</h1>
+<a th:href="@{/inputDataType/new}">Create New Location Type</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="inputDataTypeMaster : ${inputDataTypeMaster}">
+        <td th:text="${inputDataTypeMaster.inputDataTypeMasterId}">ID</td>
+        <td th:text="${inputDataTypeMaster.inputDataTypeMasterName}">Name</td>
+        <td>
+            <a th:href="@{/inputDataType/edit/{id}(id=${inputDataTypeMaster.inputDataTypeMasterId})}">Edit</a>
+            <a th:href="@{/inputDataType/delete/{id}(id=${inputDataTypeMaster.inputDataTypeMasterId})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

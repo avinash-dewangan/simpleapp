@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create/Edit Input Data Type</title>
+</head>
+<body>
+<h1>Create/Edit Input Data Type</h1>
+<form th:action="@{/input-type}" th:object="${inputTypeMaster}" method="post">
+    <input type="hidden" th:if="${inputTypeMaster.inputTypeMasterId}" th:field="*{inputTypeMasterId}"/>
+    <div>
+        <label>Name:</label>
+        <input type="text" th:field="*{inputTypeMasterName}" placeholder="Enter input Type name"/>
+    </div>
+<!--    <div>-->
+<!--        <label for="options">Choose an option:</label>-->
+<!--        <select id="options" name="selectedOption" >-->
+<!--            <option value="" disabled selected>Select an option</option>-->
+<!--            <option th:each="option : ${options}" th:value="${option}" th:text="${option}"></option>-->
+<!--        </select>-->
+<!--    </div>-->
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
+<a th:href="@{/input-type}">Back to List</a>
+</body>
+</html>

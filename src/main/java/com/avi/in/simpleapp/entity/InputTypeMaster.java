@@ -7,11 +7,12 @@ import lombok.Data;
 
 @Data
 @Entity
-public class inputTypeMaster {
+public class InputTypeMaster {
     @Id
     @Column(name = "id", nullable = false)
     private Long inputTypeId;
 
     private String inputTypeName;
+
 
 }
