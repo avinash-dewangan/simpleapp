@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class User {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private UserInfo userInfo;
 
-    public User(String username, String email, String password, UserInfo userInfo) {
+    public Users(String username, String email, String password, UserInfo userInfo) {
 
         this.username = username;
         this.email = email;
@@ -31,7 +31,10 @@ public class User {
         this.userInfo = userInfo;
     }
 
-   
+    public Users() {
+
+    }
+
 
     // Getters and Setters
     public Long getId() {

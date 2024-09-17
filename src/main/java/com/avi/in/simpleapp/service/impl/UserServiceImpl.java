@@ -2,7 +2,7 @@ package com.avi.in.simpleapp.service.impl;
 
 
 import com.avi.in.simpleapp.dao.IUserDao;
-import com.avi.in.simpleapp.entity.User;
+import com.avi.in.simpleapp.entity.Users;
 import com.avi.in.simpleapp.exception.DatabaseException;
 import com.avi.in.simpleapp.exception.GenericException;
 import com.avi.in.simpleapp.service.UserService;
@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User save(User user) throws GenericException {
+    public Users save(Users user) throws GenericException {
         try {
             // Check if user with the same username or email already exists
             if (iUserDao.findByUsername(user.getUsername()) != null) {
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAll() {
+    public List<Users> findAll() {
         try {
             return iUserDao.findAll();
         } catch (DataAccessException ex) {
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findById(Long id) {
+    public Users findById(Long id) {
         try {
             return iUserDao.findById(id);
         } catch (DataAccessException ex) {
@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByUsername(String username) {
+    public Users findByUsername(String username) {
         try {
             return iUserDao.findByUsername(username);
         } catch (DataAccessException ex) {
@@ -79,7 +79,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByEmail(String email) {
+    public Users findByEmail(String email) {
         try {
             return iUserDao.findByEmail(email);
         } catch (DataAccessException ex) {

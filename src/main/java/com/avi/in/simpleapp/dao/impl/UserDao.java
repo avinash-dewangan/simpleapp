@@ -1,7 +1,7 @@
 package com.avi.in.simpleapp.dao.impl;
 
 import com.avi.in.simpleapp.dao.IUserDao;
-import com.avi.in.simpleapp.entity.User;
+import com.avi.in.simpleapp.entity.Users;
 import com.avi.in.simpleapp.exception.GenericException;
 import com.avi.in.simpleapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,17 +17,17 @@ public class UserDao implements IUserDao {
 
 
     @Override
-    public User save(User user) throws GenericException {
+    public Users save(Users user) throws GenericException {
         return userRepository.save(user);
     }
 
     @Override
-    public List<User> findAll() {
+    public List<Users> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public User findById(Long id) {
+    public Users findById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
@@ -37,12 +37,12 @@ public class UserDao implements IUserDao {
     }
 
     @Override
-    public User findByUsername(String username) {
+    public Users findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
     @Override
-    public User findByEmail(String email) {
+    public Users findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
 }

@@ -3,16 +3,16 @@ package com.avi.in.simpleapp.service;
 
 
 
-import com.avi.in.simpleapp.entity.User;
+import com.avi.in.simpleapp.entity.Users;
 import com.avi.in.simpleapp.exception.GenericException;
 
 import java.util.List;
 
 public interface UserService {
-    User save(User user) throws GenericException;
-    List<User> findAll();
-    User findById(Long id);
+    Users save(Users user) throws GenericException;
+    List<Users> findAll();
+    Users findById(Long id);
     void deleteById(Long id);
-    User findByUsername(String username);
-    User findByEmail(String email);
+    Users findByUsername(String username);
+    Users findByEmail(String email);
 }

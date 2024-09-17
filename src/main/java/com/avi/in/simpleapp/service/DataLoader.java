@@ -1,12 +1,8 @@
 package com.avi.in.simpleapp.service;
 
-import com.avi.in.simpleapp.entity.User;
 import com.avi.in.simpleapp.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
-import java.util.List;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -19,10 +15,10 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-//        List<User> locationTypeMasters = Arrays.asList(
-//                new User("avinash","avi@gmail1.com","password"),
-//                new User("avinash1","avi@gmail1.com","password"),
-//                new User("avinash2","avi@gmail2.com","password")
+//        List<Users> locationTypeMasters = Arrays.asList(
+//                new Users("avinash","avi@gmail1.com","password"),
+//                new Users("avinash1","avi@gmail1.com","password"),
+//                new Users("avinash2","avi@gmail2.com","password")
 //        );
 //        userRepository.saveAll(locationTypeMasters);
     }

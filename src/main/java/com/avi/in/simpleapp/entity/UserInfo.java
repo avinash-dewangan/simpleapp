@@ -19,7 +19,7 @@ public class UserInfo {
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private Users user;
 
     // Getters and Setters
     public Long getId() {
@@ -46,11 +46,11 @@ public class UserInfo {
         this.phoneNumber = phoneNumber;
     }
 
-    public User getUser() {
+    public Users getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Users user) {
         this.user = user;
     }
 }

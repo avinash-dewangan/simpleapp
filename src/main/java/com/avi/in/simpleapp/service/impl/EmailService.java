@@ -7,6 +7,8 @@ import com.resend.services.emails.model.SendEmailResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class EmailService implements IEmailService {
 
@@ -30,6 +32,15 @@ public class EmailService implements IEmailService {
         return data.getId();
     }
 
+    @Override
+    public String sentMail(ArrayList<String> to, String Subject, String text) {
+        return null;
+    }
+
+    @Override
+    public int mailTest() {
+        return 0;
+    }
 
 
 }

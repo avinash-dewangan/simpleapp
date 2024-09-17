@@ -6,6 +6,7 @@ import com.avi.in.simpleapp.repository.OtpRepository;
 import com.avi.in.simpleapp.service.IEmailService;
 import com.avi.in.simpleapp.service.IOtpService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,6 +19,7 @@ public class OtpService implements IOtpService {
     @Autowired
     private OtpRepository otpRepository;
 
+    @Qualifier("emailService")
     @Autowired
     private IEmailService iEmailService;
 

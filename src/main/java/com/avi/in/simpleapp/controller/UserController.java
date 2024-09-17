@@ -1,7 +1,7 @@
 package com.avi.in.simpleapp.controller;
 
 
-import com.avi.in.simpleapp.entity.User;
+import com.avi.in.simpleapp.entity.Users;
 import com.avi.in.simpleapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,21 +17,21 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<Users> createUser(@RequestBody Users user) {
 
-        User savedUser = userService.save(user);
+        Users savedUser = userService.save(user);
         return ResponseEntity.ok(savedUser);
     }
 
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
-        List<User> users = userService.findAll();
+    public ResponseEntity<List<Users>> getAllUsers() {
+        List<Users> users = userService.findAll();
         return ResponseEntity.ok(users);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        User user = userService.findById(id);
+    public ResponseEntity<Users> getUserById(@PathVariable Long id) {
+        Users user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
 
@@ -42,14 +42,14 @@ public class UserController {
     }
 
     @GetMapping("/username/{username}")
-    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
-        User user = userService.findByUsername(username);
+    public ResponseEntity<Users> getUserByUsername(@PathVariable String username) {
+        Users user = userService.findByUsername(username);
         return ResponseEntity.ok(user);
     }
 
     @GetMapping("/email/{email}")
-    public ResponseEntity<User> getUserByEmail(@PathVariable String email) {
-        User user = userService.findByEmail(email);
+    public ResponseEntity<Users> getUserByEmail(@PathVariable String email) {
+        Users user = userService.findByEmail(email);
         return ResponseEntity.ok(user);
     }
 }
