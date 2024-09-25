@@ -38,3 +38,4 @@ build/
 /src/main/resources/application-prod.properties
 
 /documents
+/data

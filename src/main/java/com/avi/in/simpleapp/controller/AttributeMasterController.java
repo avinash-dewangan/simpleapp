@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -32,6 +31,12 @@ public class AttributeMasterController {
         List<Attribute> attribute = repository.findAll();
         model.addAttribute("attribute", attribute);
         return "attribute/list";
+    }
+
+    @GetMapping("/new1")
+    @ResponseBody
+    public String listAlla(Model model) {
+        return "ddd";
     }
 
     @GetMapping("/new")
